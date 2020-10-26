@@ -70,10 +70,19 @@ namespace GreetingKataTests
             {
                 yield return new object[] {new List<string> {"Jill", "Jane"}, "Hello, Jill and Jane."};
                 yield return new object[]
-                    {new List<string> {"Amy", "Brian", "Charlotte"}, "Hello, Amy, Brian and Charlotte."};
+                {
+                    new List<string> {"Amy", "Brian", "Charlotte"}, "Hello, Amy, Brian and Charlotte."
+                };
+                yield return new object[]
+                {
+                    new List<string> {"Amy", "BRIAN", "Charlotte"}, "Hello, Amy and Charlotte. AND HELLO BRIAN!"
+                };
+                
             }
 
             IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
         }
+        
+        
     }
 }
